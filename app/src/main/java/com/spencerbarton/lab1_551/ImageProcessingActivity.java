@@ -3,11 +3,15 @@ package com.spencerbarton.lab1_551;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class ImageProcessingActivity extends ActionBarActivity {
+
+    private static final String TAG = "ImageProcessingActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,5 +41,19 @@ public class ImageProcessingActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onReset(View view) {
+        Log.d(TAG, "Reset");
+    }
+
+
+    public void onBlur(View view) {
+        Log.d(TAG, "Blur");
+    }
+
+
+    public void onCanny(View view) {
+        Log.d(TAG, "Canny");
     }
 }
