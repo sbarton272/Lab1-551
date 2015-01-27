@@ -2,7 +2,11 @@
 <resources>
 
     <string name="app_name">Lab1-551</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="lab_name">18-551 Lab 1</string>
+    <string name="student1">David Lu</string>
+    <string name="student1_email">delu@andrew.cmu.edu</string>
+    <string name="student2">Spencer Barton</string>
+    <string name="student2_email">sebarton@andrew.cmu.edu</string>
     <string name="action_settings">Settings</string>
 
 </resources>
