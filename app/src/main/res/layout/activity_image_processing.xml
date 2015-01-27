@@ -19,21 +19,27 @@
             android:layout_height="wrap_content"
             android:text="@string/image_reset"
             android:id="@+id/button"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="onReset"
+            style="@android:style/ButtonBar" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/image_blur"
             android:id="@+id/button3"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="onBlur"
+            style="@android:style/ButtonBar" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/image_canny"
             android:id="@+id/button2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="onCanny"
+            style="@android:style/ButtonBar" />
     </LinearLayout>
 
     <ImageView
