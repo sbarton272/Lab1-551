@@ -7,8 +7,10 @@
     <string name="student1_email">delu@andrew.cmu.edu</string>
     <string name="student2">Spencer Barton</string>
     <string name="student2_email">sebarton@andrew.cmu.edu</string>
-
     <string name="action_audio">Audio Processing</string>
     <string name="action_image">Image Processing</string>
+    <string name="title_activity_audio_processing">Audio Processing</string>
+    <string name="btn_play_raw_audio">Play Raw Audio</string>
+    <string name="btn_play_filter_audio">Play Filtered Audio</string>
 
 </resources>
