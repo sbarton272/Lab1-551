@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Lab1-551</string>
+    <string name="app_name">Lab1 18-551</string>
     <string name="lab_name">18-551 Lab 1</string>
     <string name="student1">David Lu</string>
     <string name="student1_email">delu@andrew.cmu.edu</string>
     <string name="student2">Spencer Barton</string>
     <string name="student2_email">sebarton@andrew.cmu.edu</string>
-    <string name="action_settings">Settings</string>
+
+    <string name="action_audio">Audio Processing</string>
+    <string name="action_image">Image Processing</string>
 
 </resources>
