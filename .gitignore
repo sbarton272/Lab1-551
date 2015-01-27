@@ -1,9 +1,9 @@
-.gradle
-local.properties
-.idea/workspace.xml
-.idea/libraries
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
 .DS_Store
-build
-libraries/opencv/build
 app/app.iml
 .idea/gradle.xml
+.gradle/
+build/
+/*/build/
