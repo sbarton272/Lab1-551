@@ -1,5 +1,6 @@
 package com.spencerbarton.lab1_551;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,10 +36,10 @@ public class MainActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.action_audio:
-                Log.d(TAG, "Audio");
+                Intent intent = new Intent(this, AudioProcessingActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.action_image:
-                Log.d(TAG, "Image");
                 return true;
         }
         return super.onOptionsItemSelected(item);
