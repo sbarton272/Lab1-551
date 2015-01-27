@@ -6,24 +6,25 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
+import android.view.View;
 
 
-public class MainActivity extends ActionBarActivity {
+public class ImageProcessingActivity extends ActionBarActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "ImageProcessingActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_image_processing);
+        Intent intent = getIntent();
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        getMenuInflater().inflate(R.menu.menu_image_processing, menu);
         return true;
     }
 
@@ -35,16 +36,24 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        switch (id) {
-            case R.id.action_audio:
-                Intent intent = new Intent(this, AudioProcessingActivity.class);
-                startActivity(intent);
-                return true;
-            case R.id.action_image:
-                Intent intent = new Intent(this, ImageProcessingActivity.class);
-                startActivity(intent);
-                return true;
+        if (id == R.id.action_settings) {
+            return true;
         }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onReset(View view) {
+        Log.d(TAG, "Reset");
+    }
+
+
+    public void onBlur(View view) {
+        Log.d(TAG, "Blur");
+    }
+
+
+    public void onCanny(View view) {
+        Log.d(TAG, "Canny");
     }
 }

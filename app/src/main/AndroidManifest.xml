@@ -19,12 +19,17 @@
         <activity
             android:name=".AudioProcessingActivity"
             android:label="@string/title_activity_audio_processing"
-            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.spencerbarton.lab1_551.MainActivity" />
         </activity>
-
+        <activity
+            android:name=".ImageProcessingActivity"
+            android:label="@string/title_activity_image_processing"
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.spencerbarton.lab1_551.MainActivity" />
+        </activity>
         <service
             android:name=".PlayAudio"
             android:enabled="true"
