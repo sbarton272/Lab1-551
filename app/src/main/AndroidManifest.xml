@@ -24,6 +24,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.spencerbarton.lab1_551.MainActivity" />
         </activity>
+
+        <service
+            android:name=".PlayAudio"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>
