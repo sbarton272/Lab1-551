@@ -35,13 +35,14 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        Intent intent;
         switch (id) {
             case R.id.action_audio:
-                Intent intent = new Intent(this, AudioProcessingActivity.class);
+                intent = new Intent(this, AudioProcessingActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.action_image:
-                Intent intent = new Intent(this, ImageProcessingActivity.class);
+                intent = new Intent(this, ImageProcessingActivity.class);
                 startActivity(intent);
                 return true;
         }

@@ -1,0 +1,45 @@
+%% 18-551 HW1
+% Spencer Barton, David Lu
+
+clear all
+close all
+
+%% Load
+
+N = 2^10;
+
+[y, Fs] = audioread('hw1_noisy.wav');
+
+sound(y,Fs);
+pause;
+
+
+figure;
+t = linspace(0,length(y)/Fs,length(y));
+subplot(2,1,1); plot(t,y);
+Y = fft(y,N);
+w = ((0:(length(Y)-1)) - length(Y)/2) / length(Y) * 2;
+subplot(2,1,2); plot(w, fftshift(abs(Y)));
+
+%%  Filter
+
+bpf = fir1(512, [.45, .46]);
+
+figure; freqz(bpf);
+
+fltY = filter(bpf,1,y);
+
+sound(fltY,Fs);
+
+figure;
+t = linspace(0,length(fltY)/Fs,length(fltY));
+subplot(2,1,1); plot(t,fltY);
+fltFreqY = fft(fltY,N);
+len = length(fltFreqY);
+w = ((0:(len-1)) - len/2) / len;
+subplot(2,1,2); plot(w, fftshift(abs(fltFreqY)));
+
+%% Amplitude modulation
+
+Ftarget = .455 * Fs / 2
+Fc = .1 * Fs / 2;

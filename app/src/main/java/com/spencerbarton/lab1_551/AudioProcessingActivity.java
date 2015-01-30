@@ -30,9 +30,10 @@ files)
 
 public class AudioProcessingActivity extends ActionBarActivity {
 
-    public final static String EXTRA_AUDIO = "com.spencerbarton.lab1_551.EXTRA_AUDIO";
+    public final static int RAW_AUDIO = R.raw.hw1_noisy;
     private PlayAudio mService;
     private boolean mBound = false;
+
     private ServiceConnection mConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -62,7 +63,6 @@ public class AudioProcessingActivity extends ActionBarActivity {
 
         // Bind audio service
         Intent intent = new Intent(this, PlayAudio.class);
-        intent.putExtra(EXTRA_AUDIO, R.raw.test1);
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
     }
 
@@ -78,13 +78,19 @@ public class AudioProcessingActivity extends ActionBarActivity {
 
     public void playRawAudio(View view) {
         if (mBound) {
-            mService.playAudio();
+            mService.playAudio(RAW_AUDIO);
         }
     }
 
     public void playFilteredAudio(View view) {
         if (mBound) {
-            mService.playAudio();
+            mService.playAudio(RAW_AUDIO);
+        }
+    }
+
+    public void playModulatedAudio(View view) {
+        if (mBound) {
+            mService.playAudio(RAW_AUDIO);
         }
     }
 

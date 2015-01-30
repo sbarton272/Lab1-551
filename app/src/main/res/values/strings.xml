@@ -13,6 +13,7 @@
     <string name="title_activity_audio_processing">Audio Processing</string>
     <string name="btn_play_raw_audio">Play Raw Audio</string>
     <string name="btn_play_filter_audio">Play Filtered Audio</string>
+    <string name="btn_play_modulated_audio">Play Modulated Audio</string>
 
     <string name="title_activity_image_processing">Image Processing</string>
     <string name="action_settings">Settings</string>

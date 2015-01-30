@@ -23,5 +23,14 @@
         android:layout_below="@+id/btn_raw_audio"
         />
 
+    <Button
+        android:id="@+id/btn_mod_audio"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_play_modulated_audio"
+        android:onClick="playModulatedAudio"
+        android:layout_below="@+id/btn_raw_audio"
+        />
+
 
 </RelativeLayout>
