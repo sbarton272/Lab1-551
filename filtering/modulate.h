@@ -19,6 +19,7 @@
 // Calculated from matlab.
 #define MODULATE_FLT_LEN 100
 #define MODULATE_FREQ_MOD 11025
+#define MODULATE_FREQ_SMP 44100
 
 /*==================================
  * Public

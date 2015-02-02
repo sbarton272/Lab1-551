@@ -54,7 +54,7 @@ void modulate(double data[], uint32_t dataLen) {
   for (i = 0; i < dataLen; i++) {
 
     // Get scaling coef from filter
-    fltIndx = ((i * MODULATE_FLT_LEN) / MODULATE_FREQ_MOD) % MODULATE_FLT_LEN;
+    fltIndx = ((i * MODULATE_FLT_LEN * MODULATE_FREQ_MOD) / MODULATE_FREQ_SMP) % MODULATE_FLT_LEN;
 
     // Update data
     data[i] = filterCoef[fltIndx] * data[i];

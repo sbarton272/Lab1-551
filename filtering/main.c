@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
   // Load audio
   audio_t* audio = malloc(sizeof(audio_t));
   readDatFile(AUDIO_IN_FILE, audio);
-  printf("Read in (%d) floats\n", audio->len);
+  printf("Read in (%d) doubles\n", audio->len);
 
   // Filter audio, Note destructive
   filter(audio->data, audio->len);
