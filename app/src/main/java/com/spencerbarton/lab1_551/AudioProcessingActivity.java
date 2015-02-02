@@ -31,6 +31,8 @@ files)
 public class AudioProcessingActivity extends ActionBarActivity {
 
     public final static int RAW_AUDIO = R.raw.hw1_noisy;
+    public final static int FLT_AUDIO = R.raw.hw1_filtered;
+    public final static int MOD_AUDIO = R.raw.hw1_modulated;
     private PlayAudio mService;
     private boolean mBound = false;
 
@@ -84,13 +86,13 @@ public class AudioProcessingActivity extends ActionBarActivity {
 
     public void playFilteredAudio(View view) {
         if (mBound) {
-            mService.playAudio(RAW_AUDIO);
+            mService.playAudio(FLT_AUDIO);
         }
     }
 
     public void playModulatedAudio(View view) {
         if (mBound) {
-            mService.playAudio(RAW_AUDIO);
+            mService.playAudio(MOD_AUDIO);
         }
     }
 
