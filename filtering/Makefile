@@ -1,11 +1,8 @@
-pedometer: pedometer.o stepDetector.o fixedPt.o
-	gcc -Wall -o pedometer pedometer.o stepDetector.o fixedPt.o
+main: main.o filter.o
+	gcc -Wall -o main main.o filter.o
 
-pedometer.o: pedometer.c stepDetector.h fixedPt.h
-	gcc -c pedometer.c stepDetector.c fixedPt.c
+main.o: main.c filter.h
+	gcc -c main.c filter.c
 
-stepDetector.o: stepDetector.c stepDetector.h fixedPt.h
-	gcc -c stepDetector.c fixedPt.c
-
-fixedPt.o: fixedPt.c fixedPt.h
-	gcc -c fixedPt.c
+filter.o: filter.c filter.h
+	gcc -c filter.c
