@@ -17,7 +17,8 @@
  *==================================*/
 
 // Calculated from matlab.
-#define FLT_LEN 65
+#define FLT_LEN 100
+#define FREQ_MOD 11025
 
 extern const double filterCoef[FLT_LEN];
 

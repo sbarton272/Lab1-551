@@ -28,6 +28,9 @@ int main(int argc, char *argv[]) {
   writeDatFile(AUDIO_FLT_FILE, audio);
   printf("Saved to %s\n", AUDIO_FLT_FILE);
 
+  // Modulate audio, note destructive
+  modulate(audio->data, audio->len);
+  writeDatFile(AUDIO_MOD_FILE, audio);
   printf("Saved to %s\n", AUDIO_MOD_FILE);
 
   freeAudio(audio);

@@ -15,6 +15,9 @@
 #include <stdlib.h>
 #include <inttypes.h>
 
+#include "filter.h"
+#include "modulate.h"
+
 /*==================================
  * Macros
  *==================================*/
