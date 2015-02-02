@@ -12,7 +12,7 @@
  * Constants
  *==================================*/
 
-const double filterCoef[FLT_LEN] = {1, 0.998026728428272, 0.992114701314478,
+const static double filterCoef[MODULATE_FLT_LEN] = {1, 0.998026728428272, 0.992114701314478,
   0.982287250728689, 0.968583161128631, 0.951056516295154, 0.929776485888252,
   0.904827052466020, 0.876306680043864, 0.844327925502015, 0.809016994374948,
   0.770513242775789, 0.728968627421412, 0.684547105928689, 0.637423989748690,
@@ -50,11 +50,11 @@ const double filterCoef[FLT_LEN] = {1, 0.998026728428272, 0.992114701314478,
 void modulate(double data[], uint32_t dataLen) {
 	
   // Iterate through all terms
-  uint16_t i, fltIndx;
+  uint32_t i, fltIndx;
   for (i = 0; i < dataLen; i++) {
 
     // Get scaling coef from filter
-    fltIndx = ((i * FLT_LEN) / FREQ_MOD) % FLT_LEN;
+    fltIndx = ((i * MODULATE_FLT_LEN) / MODULATE_FREQ_MOD) % MODULATE_FLT_LEN;
 
     // Update data
     data[i] = filterCoef[fltIndx] * data[i];

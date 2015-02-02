@@ -20,9 +20,7 @@
  *==================================*/
 
 // Calculated from matlab.
-#define FLT_LEN 17
-
-extern const double filterCoef[FLT_LEN];
+#define FILTER_FLT_LEN 65
 
 /*==================================
  * Public

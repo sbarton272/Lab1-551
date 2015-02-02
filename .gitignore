@@ -7,3 +7,5 @@ app/app.iml
 .gradle/
 build/
 /*/build/
+*.o
+*.json
