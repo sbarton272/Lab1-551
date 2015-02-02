@@ -1,12 +1,18 @@
 package com.spencerbarton.lab1_551;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+
+import org.opencv.core.Mat;
 
 
 public class ImageProcessingActivity extends ActionBarActivity {
@@ -45,11 +51,14 @@ public class ImageProcessingActivity extends ActionBarActivity {
 
     public void onReset(View view) {
         Log.d(TAG, "Reset");
+        ImageView v = (ImageView) findViewById(R.id.unprocessed_img);
+        v.setImageResource(R.drawable.team);
     }
 
 
     public void onBlur(View view) {
         Log.d(TAG, "Blur");
+        Bitmap bitmap = ((BitmapDrawable)v.getDrawable()).getBitmap();
     }
 
 
