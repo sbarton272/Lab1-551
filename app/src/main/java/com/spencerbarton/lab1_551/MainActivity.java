@@ -6,12 +6,34 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
+import android.widget.Toast;
+
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.InstallCallbackInterface;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Mat;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements LoaderCallbackInterface {
 
     private static final String TAG = "MainActivity";
+
+    protected BaseLoaderCallback mOpenCVCallBack = new BaseLoaderCallback(this) {
+        @Override
+        public void onManagerConnected(int status) {
+            switch (status) {
+                case LoaderCallbackInterface.SUCCESS:
+                {
+                    onOpenCVReady();
+                } break;
+                default:
+                {
+                    super.onManagerConnected(status);
+                } break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +41,37 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+
+        Log.i("DEMO", "Trying to load OpenCV library");
+        if (!OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_6, this, mOpenCVCallBack))
+        {
+            Log.e("DEMO", "Cannot connect to OpenCV Manager");
+        }
+    }
+
+    protected void onOpenCVReady(){
+        //this should crash if opencv is not loaded
+        Mat img = new Mat();
+        Toast.makeText(getApplicationContext(), "opencv ready", Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
+    public void onManagerConnected(int status) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void onPackageInstall(int operation,
+                                 InstallCallbackInterface callback) {
+        // TODO Auto-generated method stub
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
