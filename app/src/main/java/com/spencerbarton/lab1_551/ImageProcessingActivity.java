@@ -63,26 +63,27 @@ public class ImageProcessingActivity extends ActionBarActivity {
 
     public void onBlur(View view) {
         Log.d(TAG, "Blur");
-        ImageView v = (ImageView) findViewById(R.id.process_img);
-        Bitmap bitmap = ((BitmapDrawable)v.getDrawable()).getBitmap();
-        //First convert Bitmap to Mat
-        Mat ImageMat = new Mat ( bitmap.getHeight(), bitmap.getWidth(), CvType.CV_8U, new Scalar(4));
-        Bitmap myBitmap32 = bitmap.copy(Bitmap.Config.ARGB_8888, true);
-        Utils.bitmapToMat(myBitmap32, ImageMat);
+        Mat ImageMat = getMat();
 
         Imgproc.blur(ImageMat, ImageMat, new Size(100, 100));
 
-        //Then convert the processed Mat to Bitmap
-        Bitmap resultBitmap = Bitmap.createBitmap(ImageMat.cols(),  ImageMat.rows(),Bitmap.Config.ARGB_8888);
-        Utils.matToBitmap(ImageMat, resultBitmap);
-
-        //Set member to the Result Bitmap. This member is displayed in an ImageView
-        v.setImageBitmap(resultBitmap);
+        setMat(ImageMat);
+        System.gc();
     }
 
 
     public void onCanny(View view) {
         Log.d(TAG, "Canny");
+
+        Mat ImageMat = getMat();
+
+        Imgproc.Canny(ImageMat, ImageMat, 300, 600, 5, true);
+
+        setMat(ImageMat);
+        System.gc();
+    }
+
+    private Mat getMat() {
         ImageView v = (ImageView) findViewById(R.id.process_img);
         Bitmap bitmap = ((BitmapDrawable)v.getDrawable()).getBitmap();
         //First convert Bitmap to Mat
@@ -90,7 +91,11 @@ public class ImageProcessingActivity extends ActionBarActivity {
         Bitmap myBitmap32 = bitmap.copy(Bitmap.Config.ARGB_8888, true);
         Utils.bitmapToMat(myBitmap32, ImageMat);
 
-        Imgproc.Canny(ImageMat, ImageMat, 300, 600, 5, true);
+        return ImageMat;
+    }
+
+    private void setMat(Mat ImageMat) {
+        ImageView v = (ImageView) findViewById(R.id.process_img);
 
         //Then convert the processed Mat to Bitmap
         Bitmap resultBitmap = Bitmap.createBitmap(ImageMat.cols(),  ImageMat.rows(),Bitmap.Config.ARGB_8888);
