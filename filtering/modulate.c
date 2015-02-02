@@ -1,12 +1,12 @@
 /**
- * Filter audio file
+ * Modulate audio file
  */
 
 /*==================================
  * Includes
  *==================================*/
 
-#include "filter.h"
+#include "modulate.h"
 
  /*==================================
  * Constants
@@ -58,6 +58,5 @@ void filter(double data[], uint32_t dataLen) {
 
     // Update data
     data[i] = filteredValue;
-    printf("Filtered(%d) = %d\n", i, data[i]);
   }
 }

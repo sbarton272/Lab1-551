@@ -24,7 +24,7 @@ title('Raw');
 
 %%  Filter
 
-bpf = fir1(512, [.45, .46]);
+bpf = fir1(16, [.45, .46]);
 
 figure; title('Filter'); freqz(bpf);
 

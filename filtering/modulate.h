@@ -1,12 +1,9 @@
 /**
- * Filter audio
- * - Load file
- * - Filter
- * - Save file
+ * Amplitude modulate audio
  */
 
-#ifndef _FILTER_H
-#define _FILTER_H
+#ifndef _MODULATE_H
+#define _MODULATE_H
 
 /*==================================
  * Includes
@@ -20,7 +17,7 @@
  *==================================*/
 
 // Calculated from matlab.
-#define FLT_LEN 17
+#define FLT_LEN 65
 
 extern const double filterCoef[FLT_LEN];
 
@@ -32,6 +29,6 @@ extern const double filterCoef[FLT_LEN];
  * Apply the predetermined filter to the data.
  * NOTE This destructively modifies data.
  */
-void filter(double data[], uint32_t dataLen);
+void modulate(double data[], uint32_t dataLen);
 
-#endif // _FILTER_H
+#endif // _MODULATE_H
