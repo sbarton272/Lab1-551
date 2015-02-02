@@ -2,8 +2,9 @@
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
-app/app.iml
 .idea/gradle.xml
 .gradle/
 build/
 /*/build/
+libraries/opencv.iml
+app/app.iml
